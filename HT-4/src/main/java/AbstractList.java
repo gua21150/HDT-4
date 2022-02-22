@@ -1,3 +1,5 @@
+package main.java;
+
 /**
  * Universidad Del Valle de Guatemala
  * @author Aaron Beltrán 21092
@@ -11,7 +13,6 @@
  * esta o no vacia una lista.
  *
  */
-
 /**
  *
  * @param <T>
@@ -28,7 +29,7 @@ public abstract class AbstractList<T> implements ILista<T>{
     public boolean isEmpty()
     // post: returns true iff list has no elements
     {
-        return getTamaño() == 0;
+        return getTamanio() == 0;
     }
     //es lo mismo tener un método en la clase abstracta o en la interfaz
     //la idea es que todas las clases puedan utilizar todos los metodos

@@ -1,4 +1,4 @@
-
+package main.java;
 
 /**
  * Universidad Del Valle de Guatemala
@@ -16,7 +16,7 @@
 public interface ILista<T> {
     
     
-    public int getTamaño();
+    public int getTamanio();
    // post: regresa el tamaño de la lista
 
    public boolean isEmpty();

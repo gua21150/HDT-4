@@ -1,3 +1,4 @@
+package main.java;
 /*
  * Universidad del valle de Guatemala
 * Aaron Beltrán 21092
@@ -42,7 +43,7 @@ public class MainCalculadora {
             System.out.println("Leyendo expresión: ");
             String exp = archivo.LeerArchivo();
             double res = 0;
-            res = stack.eval(exp,stack);        
+            res = stack.eval(exp,stack);
             System.out.println("Resultado: " + res);
         }
         catch (SingletonException e)

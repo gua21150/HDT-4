@@ -1,4 +1,5 @@
- /*
+package main.java;
+/*
  * Universidad del Valle de Guatemala
  * @author Aaron Beltrán 21092
 * @author Diana Díaz 21066
@@ -20,23 +21,15 @@ import java.util.Vector;
 
 public class FileProject {
     
-    
+    InfixPostfix changer;
 
     public FileProject() {
-       
+       changer = new InfixPostfix();
     }
 
-   
-    
-    
     public void CrearArchivo(Comparable[] numerosGenerados){
         try {
-            
-                
-                
-
-
-                File file = new File("src/hojasorts/NumerosAleatorios.txt");
+                File file = new File("/datos.txt");
 
                 // if FileCreator doesnt exists, then create it
                 if (!file.exists()) {
@@ -67,24 +60,18 @@ public class FileProject {
         BufferedReader br = null;
  
         try {
-
                 String sCurrentLine;
-                 File file = new File("datos.txt");
+                File file = new File("datos.txt");
                 br = new BufferedReader(new FileReader(file.getAbsoluteFile()));
 
-               
-               
                while ((sCurrentLine = br.readLine()) != null) {
-                    
                     tamaño++;
-                
                 }
                br = new BufferedReader(new FileReader(file));
               
                 while ((sCurrentLine = br.readLine()) != null) {
+                    sCurrentLine = changer.conversion(sCurrentLine); // realiza el cambio de infix a postfix
                     string = string.concat(sCurrentLine);
-                    
-                
                 }
                 
         return string;
@@ -98,17 +85,11 @@ public class FileProject {
                 }
         }
         return null;
-        
     }
 
     
     public void CrearArchivoOrdenado(Comparable[] numerosGenerados){
-        
          try {
-            
-           
-
-
                 File file = new File("src/hojasorts/NumerosOrdenados.txt");
 
                 // if FileCreator doesnt exists, then create it
@@ -130,10 +111,5 @@ public class FileProject {
         } catch (IOException e) {
                 e.printStackTrace();
         }
-        
-        
-        
     }
-    
-
 }
