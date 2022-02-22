@@ -1,4 +1,4 @@
-/*
+package main.java;/*
  * Universidad del Valle de Guatemala.
  * Aaron Beltrán 21092
  * Diana Díaz 21066

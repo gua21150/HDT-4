@@ -1,4 +1,4 @@
-
+package main.java;
 
 /*
  * Universidad del Valle de Guatemala
@@ -27,7 +27,7 @@ public class ListaDoble<T> extends AbstractList<T>{
     }
 
     @Override
-    public int getTamaño()
+    public int getTamanio()
     //post: regresa un entero con el tamaño de la lista
     {
         return tamaño;
@@ -120,11 +120,11 @@ public class ListaDoble<T> extends AbstractList<T>{
     //pre: la posicion esta dentro el rango de la lista creada
     //post: añade valor en la posicion de la lista
     {
-        if (!(0<=posicion||posicion>=getTamaño())){
+        if (!(0<=posicion||posicion>= getTamanio())){
             System.out.println("Out of bounds");
         }
 
-        if (posicion==getTamaño()-1)
+        if (posicion== getTamanio()-1)
             AgregarFinal(valor);
         else if (posicion==0){
             AgregarPrincipio(valor); tamaño++;
@@ -150,7 +150,7 @@ public class ListaDoble<T> extends AbstractList<T>{
     //pre: no esta vacia
     //post: intercambia un valor dentro la lista
     {
-        if (!(0<=posicion||posicion>=getTamaño())){
+        if (!(0<=posicion||posicion>= getTamanio())){
             System.out.println("Out of bounds");
         }//cierra if
         NodoDoble<T> NodoActual = Cabeza;
@@ -168,7 +168,7 @@ public class ListaDoble<T> extends AbstractList<T>{
     //pre: recibe entero con la posicion del valor
     //post: regresa el valor en la posicion ingresada
     {
-        if (pos<0||pos>=getTamaño()){
+        if (pos<0||pos>= getTamanio()){
             System.out.println("position out of bounds");
             System.out.println(pos);
 
@@ -188,7 +188,7 @@ public class ListaDoble<T> extends AbstractList<T>{
     //post: regresa un arreglo con el valor de los nodos
     {
         NodoDoble<T> NodoActual = Cabeza;
-        Comparable[] arreglo = new Comparable[getTamaño()];
+        Comparable[] arreglo = new Comparable[getTamanio()];
         int i=0;
         while (NodoActual.getSiguiente()!=null)
         {

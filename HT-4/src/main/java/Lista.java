@@ -1,20 +1,22 @@
-*
-        * Universidad del Valle de Guatemala
-        * @author Aaron Beltrán 21092
-        * @author Diana Díaz 21066
-        * @author Mariel Guamuche 21150
-        */
+package main.java;
+
+/***
+* Universidad del Valle de Guatemala
+* @author Aaron Beltrán 21092
+* @author Diana Díaz 21066
+* @author Mariel Guamuche 21150
+*/
 
 public class Lista<T> extends AbstractList<T>{
 
     private Nodo<T> Cabeza;
-    private int tamaño;
+    private int tamanio;
     FactoryNodos _nFactory = new FactoryNodos();
 
     public Lista(){
         //constructor pone la lista vacía
         Cabeza = null;
-        tamaño = 0;
+        tamanio = 0;
     }
 
     @Override
@@ -34,12 +36,12 @@ public class Lista<T> extends AbstractList<T>{
         else
             Cabeza = (Nodo<T>) _newNodo;
 
-        tamaño++;
+        tamanio++;
     }
 
     @Override
-    public int getTamaño()
-    //post: regresa el tamaño de la lista
+    public int getTamanio()
+    //post: regresa el tamanio de la lista
     {
         int elemento=0;
         Nodo<T> NodoActual = Cabeza;
@@ -75,21 +77,21 @@ public class Lista<T> extends AbstractList<T>{
     {
         //primero Cabeza es asignado y despues es instanciado
         Cabeza = new Nodo(valor, Cabeza);
-        tamaño++;
+        tamanio++;
     }
     @Override
     public void Agregar (T valor, int posicion)
     //pre: la posicion esta dentro el rango de la lista creada
     //post: añade valor en la posicion de la lista
     {
-        if (!(0<=posicion||posicion>=getTamaño())){
+        if (!(0<=posicion||posicion>= getTamanio())){
             System.out.println("Out of bounds");
         }
 
-        if (posicion==getTamaño()-1)
+        if (posicion== getTamanio()-1)
             AgregarFinal(valor);
         else if (posicion==0){
-            AgregarPrincipio(valor); tamaño++;
+            AgregarPrincipio(valor); tamanio++;
         }
         else
         {
@@ -102,7 +104,7 @@ public class Lista<T> extends AbstractList<T>{
             }//cierra for
             //el nodo actual es el nodo anterior
             NodoActual.setSiguiente(new Nodo(valor, (Nodo) NodoActual.getSiguiente()));
-            tamaño++;
+            tamanio++;
         }//cierra else
 
     }
@@ -112,7 +114,7 @@ public class Lista<T> extends AbstractList<T>{
     //pre: no esta vacia
     //post: intercambia un valor dentro la lista
     {
-        if (!(0<=posicion||posicion>=getTamaño())){
+        if (!(0<=posicion||posicion>= getTamanio())){
             System.out.println("Out of bounds");
         }
         Nodo<T> NodoActual = Cabeza;
@@ -131,7 +133,7 @@ public class Lista<T> extends AbstractList<T>{
     {
         Nodo<T> temp = Cabeza;
         Cabeza = (Nodo<T>) Cabeza.getSiguiente();
-        tamaño--;
+        tamanio--;
         return (T) temp.getValor();
     }
 
@@ -158,7 +160,7 @@ public class Lista<T> extends AbstractList<T>{
         {
             NodoAnterior.setSiguiente(null);
         }
-        tamaño--;
+        tamanio--;
         return (T) NodoActual.getValor();
 
     }
@@ -179,7 +181,7 @@ public class Lista<T> extends AbstractList<T>{
                 Cabeza = (Nodo<T>) NodoActual.getSiguiente();
             else
                 NodoAnterior.setSiguiente(NodoActual.getSiguiente());
-            tamaño--;
+            tamanio--;
             return (T) NodoActual.getValor();
         }
 
@@ -193,7 +195,7 @@ public class Lista<T> extends AbstractList<T>{
     @Override
     public T get(int pos)
     {
-        if (pos<0||pos>=getTamaño()){
+        if (pos<0||pos>= getTamanio()){
             System.out.println("position out of bounds");
             System.out.println(pos);
 
@@ -239,7 +241,7 @@ public class Lista<T> extends AbstractList<T>{
     //post: regresa un arreglo con el valor de los nodos
     {
         Nodo<T> NodoActual = Cabeza;
-        Comparable[] arreglo = new Comparable[getTamaño()];
+        Comparable[] arreglo = new Comparable[getTamanio()];
         int i=0;
         while (NodoActual.getSiguiente()!=null)
         {
