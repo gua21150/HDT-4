@@ -7,8 +7,6 @@
 
 */
 
-
-
 public class SingletonException extends RuntimeException {
     
     //new exception type for singleton classes
