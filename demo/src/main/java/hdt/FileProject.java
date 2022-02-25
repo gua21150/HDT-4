@@ -10,49 +10,17 @@ package hdt;
  * 
  */
 
-
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Random;
-import java.util.Vector;
-
-
 public class FileProject {
     
     InfixPostfix changer;
 
     public FileProject() {
        changer = new InfixPostfix();
-    }
-
-    public void CrearArchivo(Comparable[] numerosGenerados){
-        try {
-                File file = new File("/datos.txt");
-
-                // if FileCreator doesnt exists, then create it
-                if (!file.exists()) {
-                        file.createNewFile();
-                }
-
-                FileWriter fw = new FileWriter(file);
-                BufferedWriter bw = new BufferedWriter(fw);
-                for (int i=0;i<numerosGenerados.length;i++)
-                {
-                   bw.write(numerosGenerados[i].toString()+"\n");
-                }
-
-                bw.close();
-
-                System.out.println("Se ha creado el archivo exitosamente");
-
-        } catch (IOException e) {
-                e.printStackTrace();
-        }
-    }
+    }    
     
     public String LeerArchivo(){
       
@@ -87,31 +55,5 @@ public class FileProject {
                 }
         }
         return null;
-    }
-
-    
-    public void CrearArchivoOrdenado(Comparable[] numerosGenerados){
-         try {
-                File file = new File("src/hojasorts/NumerosOrdenados.txt");
-
-                // if FileCreator doesnt exists, then create it
-                if (!file.exists()) {
-                        file.createNewFile();
-                }
-
-                FileWriter fw = new FileWriter(file);
-                BufferedWriter bw = new BufferedWriter(fw);
-                for (int i=0;i<numerosGenerados.length;i++)
-                {
-                   bw.write(numerosGenerados[i]+"\n");
-                }
-
-                bw.close();
-
-                System.out.println("Se ha creado el archivo exitosamente");
-
-        } catch (IOException e) {
-                e.printStackTrace();
-        }
-    }
+    }        
 }

@@ -16,9 +16,8 @@ public class MainCalculadora {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        Scanner entrada_datos  = new Scanner(System.in);
+    public static void main(String[] args) {        
+        Scanner entradaDatos  = new Scanner(System.in); // lector de objetos
         FileProject archivo = new FileProject();
         
         int opcion = 0;
@@ -29,13 +28,13 @@ public class MainCalculadora {
         System.out.print("1. ArrayList\n");
         System.out.print("2. Vector\n");
         System.out.print("3. Lista\n");        
-        opcion = entrada_datos.nextInt();     
+        opcion = entradaDatos.nextInt();     
         if (opcion == 3)
         {
             System.out.println("Ingrese el tipo de lista");
             System.out.print("1. Lista\n");
             System.out.print("2. Lista Doble\n");
-            opcion2 = entrada_datos.nextInt();
+            opcion2 = entradaDatos.nextInt();
         }        
         System.out.println("Creando stack...");
         try 
@@ -68,6 +67,7 @@ public class MainCalculadora {
         {
             System.out.println(e.getMessage());
         }
+        entradaDatos.close();
     }
     
 }
