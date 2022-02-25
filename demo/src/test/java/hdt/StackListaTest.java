@@ -8,7 +8,7 @@ public class StackListaTest {
     @Test
     void testIsEmpty() {
         System.out.println("isEmpty");
-        StackArrayList instance = new StackArrayList(null);
+        StackLista instance = new StackLista(0, null);
         boolean expResult = false;
         boolean result = instance.isEmpty();
         assertEquals(expResult, result);
@@ -17,7 +17,7 @@ public class StackListaTest {
     @Test
     void testPop() {
         System.out.println("pop");
-        StackArrayList instance = new StackArrayList(null);
+        StackLista instance = new StackLista(0, null);
         Object expResult = null;
         Object result = instance.pop();
         assertEquals(expResult, result);
@@ -26,8 +26,8 @@ public class StackListaTest {
     @Test
     void testPush() {
         System.out.println("push");
-        Integer t = 5;
-        StackArrayList instance = new StackArrayList(t);
-        instance.push(t);
+        Integer dato = 5;
+        StackLista instance = new StackLista(0, null);
+        instance.push(dato);
     }
 }
