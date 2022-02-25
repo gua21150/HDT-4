@@ -14,14 +14,6 @@ public class StackListaTest {
         assertEquals(expResult, result);
     }
 
-    @Test
-    void testPop() {
-        System.out.println("pop");
-        StackLista instance = new StackLista(0, null);
-        Object expResult = null;
-        Object result = instance.pop();
-        assertEquals(expResult, result);
-    }
 
     @Test
     void testPush() {
